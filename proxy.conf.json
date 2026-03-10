@@ -1,0 +1,6 @@
+{
+  "/api/**": {
+    "target": "https://tt-jsonserver-01.alt-tools.tech/",
+    "secure": false
+  }
+}
