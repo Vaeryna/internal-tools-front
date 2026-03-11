@@ -10,40 +10,63 @@
   <div class="card">
     <div class="card-header">
       <p>Monthly Budget</p>
-      @if (positiveBudget > 0) {
-        <i class="badge bg-linear-to-br from-green-600 to-green-900">
-          <lucide-icon class="icon-badge" [img]="TrendingUp"></lucide-icon>
-        </i>
-      } @else {
-        <i class=" badge bg-linear-to-br from-red-500 to-red-700 ">
-          <lucide-icon class="icon-badge" [img]="TrendingDown"></lucide-icon>
-        </i>
-      }
+      <i class="badge bg-linear-to-br from-green-600 to-green-900">
+        <lucide-icon class="icon-badge" [img]="TrendingUp"></lucide-icon>
+      </i>
     </div>
-    <p> {{ budget?.current_month_total | currency: "EUR" : "symbol":"1.0-0" }}
-      / €{{ budget?.monthly_limit | shortNumber}}</p>
-    <p> {{ budget?.trend_percentage }}</p>
+    <div class="card-body">
+      <p> {{ budget?.current_month_total | currency: "EUR" : "symbol":"1.0-0" }}
+        / €{{ budget?.monthly_limit | shortNumber }}</p>
+
+      <p class=" bg-linear-to-br from-green-600 to-green-900 rounded-xl">{{ budget?.trend_percentage }}%</p>
+    </div>
   </div>
 
-  <div class="card-header">
-    <p>Active Tools</p>
-    <i class="badge bg-linear-to-br from-blue-500 to-blue-900 ">
-      <lucide-icon class="icon-badge" [img]="Wrench"></lucide-icon>
-    </i>
+  <div class="card">
+    <div class="card-header">
+      <p>Active Tools</p>
+      <i class="badge bg-linear-to-br from-blue-500 to-blue-900 ">
+        <lucide-icon class="icon-badge" [img]="Wrench"></lucide-icon>
+      </i>
+    </div>
+
+    <div class="card-body">
+      <p> {{ activeTools }}</p>
+      <p class="bg-linear-to-br from-blue-500 to-blue-900 rounded-xl"> {{ trendTools }}</p>
+    </div>
   </div>
 
-  <div class="card-header">
-    <p>Monthly Budget</p>
-    <i class="badge bg-linear-to-br from-red-400 to-red-700">
-      <lucide-icon class="icon-badge" [img]="Building2"></lucide-icon>
-    </i>
+  <div class="card">
+    <div class="card-header">
+      <p>Departments</p>
+      <i class="badge bg-linear-to-br from-red-400 to-red-700">
+        <lucide-icon class="icon-badge" [img]="Building2"></lucide-icon>
+      </i>
+    </div>
+    <div class="card-body">
+      <p> {{ departments }}</p>
+      <p class="bg-linear-to-br from-red-400 to-red-700 rounded-xl">
+        {{ trendDepartment }}
+      </p>
+    </div>
   </div>
 
-  <div class="card-header">
-    <p>Monthly Budget</p>
-    <i class="badge bg-linear-to-br from-pink-400 to-pink-700">
-      <lucide-icon class="icon-badge" [img]="Users"></lucide-icon>
-    </i>
+  <div class="card">
+    <div class="card-header">
+      <p>Cost/User</p>
+      <i class="badge bg-linear-to-br from-pink-400 to-pink-700">
+        <lucide-icon class="icon-badge" [img]="Users"></lucide-icon>
+      </i>
+
+    </div>
+    <div class="card-body">
+      <p> {{ costPerUser }}</p>
+      <p class="bg-linear-to-br from-pink-400 to-pink-700 rounded-xl">
+        {{ trendCostPerUser }}
+      </p>
+    </div>
   </div>
+
 </div>
 
+<app-recent-tools-tab></app-recent-tools-tab>
