@@ -1,0 +1,9 @@
+ol {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+div {
+  margin: 10px;
+}

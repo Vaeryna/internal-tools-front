@@ -1,0 +1,43 @@
+<nav>
+  <div class="flex flex-row justify-between">
+    <ol>
+      <li><a routerLink="/"><img src="techcorp.png" alt="techcorp logo"></a> </li>
+      <li><a routerLink="">TechCorp</a></li>
+      <li><a routerLink="tools">Tools</a></li>
+      <li><a routerLink="analytics">Analytics</a></li>
+      <li><a routerLink="settings"> Settings</a></li>
+    </ol>
+
+    <ol>
+      <li class="rounded-md border flex flex-row">
+        <lucide-icon [img]="Search"></lucide-icon>
+        <input id="searching" type="text" [formControl]="searching" (input)="search()"
+               placeholder="Search {{activePage}}...">
+      </li>
+      <li>
+        <lucide-icon [img]="DarkMode"></lucide-icon>
+      </li>
+      <li> @if (notifications) {
+        <lucide-icon [img]="Notification"></lucide-icon>
+      }
+        @if (!notifications) {
+          <div class="flex row-auto">
+            <lucide-icon [img]="NotificationNone"></lucide-icon>
+            <lucide-icon [img]="CircleSmall" class="items-start"></lucide-icon>
+          </div>
+        }
+      </li>
+      <li>
+        <lucide-icon [img]="Settings"></lucide-icon>
+      </li>
+      <li>
+        <lucide-icon [img]="ChevronDown"></lucide-icon>
+      </li>
+
+    </ol>
+
+  </div>
+
+
+</nav>
+
