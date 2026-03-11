@@ -1,0 +1,32 @@
+<h1> Recent Tools </h1>
+
+<table>
+  <thead>
+  <th> Tool</th>
+  <th> Department</th>
+  <th> Users</th>
+  <th> Monthly Cost</th>
+  <th> Status</th>
+  </thead>
+
+  <tbody>
+    @for (tool of tools; track tool.id) {
+      <tr>
+        <td>{{ tool.name }}</td>
+        <td>{{ tool.category }}</td>
+        <td>{{ tool.active_users_count }}</td>
+        <td>{{ tool.monthly_cost }}</td>
+
+        @if (tool.status === "active") {
+          <td class="badge bg-green-700 rounded-lg">{{ tool.status | capitalize }}</td>
+        }
+        @if (tool.status === "expiring") {
+          <td class="badge bg-orange-700 rounded-lg">{{ tool.status | capitalize }}</td>
+        }
+        @if (tool.status === "unused") {
+          <td class="badge bg-red-700 rounded-lg">{{ tool.status |capitalize }}</td>
+        }
+      </tr>
+    }
+  </tbody>
+</table>
