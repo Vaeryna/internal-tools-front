@@ -1,32 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   Bell,
   BellDot,
   ChevronDown,
-  CircleSmall,
   LucideAngularModule,
+  Menu,
   Moon,
   Search,
   Settings,
 } from 'lucide-angular';
 import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
-  imports: [FormsModule, ReactiveFormsModule, LucideAngularModule, RouterLink],
+  imports: [FormsModule, ReactiveFormsModule, LucideAngularModule, RouterLink, CommonModule],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
-
-export class Navbar {
+export class Navbar{
   readonly Search = Search;
   readonly DarkMode = Moon;
   readonly NotificationNone = Bell;
   readonly Notification = BellDot;
   readonly Settings = Settings;
   protected readonly ChevronDown = ChevronDown;
-  protected readonly CircleSmall = CircleSmall;
+  protected readonly Menu = Menu;
+
+  menuOpen = false;
   activePage = 'Tools';
 
   notifications = false;
