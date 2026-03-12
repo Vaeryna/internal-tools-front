@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   Bell,
@@ -27,7 +27,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './navbar.css',
 })
 export class Navbar {
-  constructor(private cdr: ChangeDetectorRef) {}
   readonly Search = Search;
   readonly DarkMode = Moon;
   readonly NotificationNone = Bell;
