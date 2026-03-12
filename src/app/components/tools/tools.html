@@ -1,1 +1,27 @@
-<p>tools works!</p>
+<app-recent-tools-tab [tools]="paginatedTools"></app-recent-tools-tab>
+
+<div class="mt-4 flex items-center justify-between">
+  <p class="text-sm text-slate-500">
+    Page {{ currentPage }} / {{ totalPages }}
+  </p>
+
+  <div class="flex gap-2">
+    <button
+      type="button"
+      (click)="prevPage()"
+      [disabled]="currentPage === 1"
+      class="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 disabled:cursor-not-allowed disabled:opacity-50"
+    >
+      Previous
+    </button>
+
+    <button
+      type="button"
+      (click)="nextPage()"
+      [disabled]="currentPage === totalPages"
+      class="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 disabled:cursor-not-allowed disabled:opacity-50"
+    >
+      Next
+    </button>
+  </div>
+</div>
