@@ -55,7 +55,6 @@ export class Dashboard implements OnInit {
     this.toolService
       .getTools({ _sort: 'updated_at', _order: 'desc', _limit: 8 })
       .subscribe((tools) => {
-        console.log(tools);
         this.recentTool = tools;
         this.cdr.detectChanges();
       });

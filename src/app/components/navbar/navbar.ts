@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   Bell,
@@ -10,16 +10,24 @@ import {
   Search,
   Settings,
 } from 'lucide-angular';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
-  imports: [FormsModule, ReactiveFormsModule, LucideAngularModule, RouterLink, CommonModule],
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    LucideAngularModule,
+    RouterLink,
+    CommonModule,
+    RouterLinkActive,
+  ],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
 export class Navbar {
+  constructor(private cdr: ChangeDetectorRef) {}
   readonly Search = Search;
   readonly DarkMode = Moon;
   readonly NotificationNone = Bell;
@@ -29,7 +37,6 @@ export class Navbar {
   protected readonly Menu = Menu;
 
   menuOpen = false;
-  activePage = 'Tools';
 
   notifications = false;
 
