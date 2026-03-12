@@ -1,43 +1,55 @@
-<nav>
-  <div class="flex flex-row justify-between">
-    <ol>
-      <li><a routerLink="/"><img src="techcorp.png" alt="techcorp logo"></a> </li>
-      <li><a routerLink="">TechCorp</a></li>
-      <li><a routerLink="tools">Tools</a></li>
-      <li><a routerLink="analytics">Analytics</a></li>
-      <li><a routerLink="settings"> Settings</a></li>
+<nav class="flex items-center justify-between border-b border-slate-200 bg-white px-8 py-4">
+  <div class="flex items-center gap-10">
+    <a routerLink="/" class="flex items-center gap-3">
+      <img src="techcorp.png" alt="techcorp logo" class="h-10 w-10 rounded-xl" />
+      <span class="text-[20px] font-semibold text-slate-900">TechCorp</span>
+    </a>
+
+
+    <ol class="flex items-center gap-8 text-[15px] text-slate-600">
+      <li><a routerLink="/" class="hover:text-slate-900">Dashboard</a></li>
+      <li><a routerLink="tools" class="hover:text-slate-900">Tools</a></li>
+      <li><a routerLink="analytics" class="hover:text-slate-900">Analytics</a></li>
+      <li><a routerLink="settings" class="hover:text-slate-900">Settings</a></li>
     </ol>
-
-    <ol>
-      <li class="rounded-md border flex flex-row">
-        <lucide-icon [img]="Search"></lucide-icon>
-        <input id="searching" type="text" [formControl]="searching" (input)="search()"
-               placeholder="Search {{activePage}}...">
-      </li>
-      <li>
-        <lucide-icon [img]="DarkMode"></lucide-icon>
-      </li>
-      <li> @if (notifications) {
-        <lucide-icon [img]="Notification"></lucide-icon>
-      }
-        @if (!notifications) {
-          <div class="flex row-auto">
-            <lucide-icon [img]="NotificationNone"></lucide-icon>
-            <lucide-icon [img]="CircleSmall" class="items-start"></lucide-icon>
-          </div>
-        }
-      </li>
-      <li>
-        <lucide-icon [img]="Settings"></lucide-icon>
-      </li>
-      <li>
-        <lucide-icon [img]="ChevronDown"></lucide-icon>
-      </li>
-
-    </ol>
-
   </div>
 
 
-</nav>
+  <div class="flex items-center gap-6">
+    <div class="flex h-11 w-[260px] items-center gap-2 rounded-xl border border-slate-200 px-3">
+      <lucide-icon [img]="Search" class="h-4 w-4 text-slate-400"></lucide-icon>
+      <input
+        id="searching"
+        type="text"
+        [formControl]="searching"
+        (input)="search()"
+        placeholder="Search tools..."
+        class="w-full bg-transparent text-sm text-slate-700 outline-none placeholder:text-slate-400"
+      />
+    </div>
 
+
+    <lucide-icon [img]="DarkMode" class="h-5 w-5 text-slate-700"></lucide-icon>
+
+
+    <div class="relative">
+      @if (notifications) {
+        <lucide-icon [img]="Notification" class="h-5 w-5 text-slate-700"></lucide-icon>
+      }
+      @if (!notifications) {
+        <lucide-icon [img]="NotificationNone" class="h-5 w-5 text-slate-700"></lucide-icon>
+        <span class="absolute -right-1 -top-1 h-2.5 w-2.5 rounded-full bg-red-500"></span>
+      }
+    </div>
+
+
+    <lucide-icon [img]="Settings" class="h-5 w-5 text-slate-700"></lucide-icon>
+
+
+    <div class="flex items-center gap-2">
+      <div class="h-8 w-8 rounded-full bg-slate-200"></div>
+      <lucide-icon [img]="ChevronDown" class="h-4 w-4 text-slate-700"></lucide-icon>
+    </div>
+  </div>
+</nav>
+<br>
