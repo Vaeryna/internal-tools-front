@@ -1,4 +1,4 @@
-export function sortBy(filter: string, order: 'asc' | 'des', input: any[]) {
+export function sortBy(filter: string, order: 'asc' | 'desc', input: any[]) {
   return input.sort((a, b) => {
     const A = a[filter];
     const B = b[filter];

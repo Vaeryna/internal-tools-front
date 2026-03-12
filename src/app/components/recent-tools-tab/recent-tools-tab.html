@@ -17,7 +17,7 @@
             Tool
             <span>
               <lucide-icon [img]="ChevronUp" (click)="sort('name', 'asc')"></lucide-icon>
-              <lucide-icon [img]="ChevronDown" (click)="sort('name', 'des')"></lucide-icon>
+              <lucide-icon [img]="ChevronDown" (click)="sort('name', 'desc')"></lucide-icon>
             </span>
           </div>
         </th>
@@ -27,7 +27,7 @@
             Department
             <span>
               <lucide-icon [img]="ChevronUp" (click)="sort('category', 'asc')"></lucide-icon>
-              <lucide-icon [img]="ChevronDown" (click)="sort('category', 'des')"></lucide-icon>
+              <lucide-icon [img]="ChevronDown" (click)="sort('category', 'desc')"></lucide-icon>
             </span>
           </div>
         </th>
@@ -37,7 +37,7 @@
             Users
             <span>
               <lucide-icon [img]="ChevronUp" (click)="sort('active_users_count', 'asc')"></lucide-icon>
-              <lucide-icon [img]="ChevronDown" (click)="sort('active_users_count', 'des')"></lucide-icon>
+              <lucide-icon [img]="ChevronDown" (click)="sort('active_users_count', 'desc')"></lucide-icon>
             </span>
           </div>
 
@@ -49,7 +49,7 @@
             Monthly Cost
             <span>
               <lucide-icon [img]="ChevronUp" (click)="sort('monthly_cost', 'asc')"></lucide-icon>
-              <lucide-icon [img]="ChevronDown" (click)="sort('monthly_cost', 'des')"></lucide-icon>
+              <lucide-icon [img]="ChevronDown" (click)="sort('monthly_cost', 'desc')"></lucide-icon>
             </span>
           </div>
         </th>
@@ -59,7 +59,7 @@
             Status
             <span>
               <lucide-icon [img]="ChevronUp" (click)="sort('status', 'asc')"></lucide-icon>
-              <lucide-icon [img]="ChevronDown" (click)="sort('status', 'des')"></lucide-icon>
+              <lucide-icon [img]="ChevronDown" (click)="sort('status', 'desc')"></lucide-icon>
             </span>
           </div>
         </th>
@@ -72,7 +72,13 @@
             <td class="w-[35%] py-5">
               <div class="flex items-center gap-3">
                 <span class="text-lg">
-                  <img src="{{tool.icon_url}}" alt="{{tool.name}}-icon" class="h-3 w-3">
+                 @if (!tool.imageError) {
+                   <img src="{{tool.icon_url}}" alt="{{tool.name}}-icon" class="h-3 w-3"
+                        (error)="tool.imageError = true">
+                 }
+                  @if (tool.imageError) {
+                    <lucide-icon [img]="ImageOff" class="h-3 w-3"> </lucide-icon>
+                  }
                 </span>
                 <span class="font-medium">{{ tool.name }}</span>
               </div>
