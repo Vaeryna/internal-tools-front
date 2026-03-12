@@ -24,6 +24,17 @@ Le dossier `utils` contient quelques fonctions utiles mais non liées au projet 
 
 Le fichier `app-routes.ts` est celui qui contient les différentes routes de l'application.
 
+### Outils
+
+Framework: Angular
+Styling : Tailwind
+Icones : Lucide
+Routing : Angular Router
+State management : Angular services + RxJS
+Api handling : Angular HttpClient
+Build tool : Angular cli (basé sur esbuild / vite-like)
+Charts: chart.js
+
 ### Déroulé
 
 J'ai commencé par créer tous les fichiers squelettes puis me suis attelée à la barre de navigation : commune à toutes les pages.
@@ -84,7 +95,6 @@ La stack de test classique d'Angular est :
 
 ## ⚡ Performance Optimizations
 
-Techniques utilisées pour une app 3-pages optimale
 L'extension `LightHouse` disponible dans les extensions Chrome a permis de tester les performances de l'application.
 Celles-ci restent à améliorer : l'extension a donné un score de 48 en performances.
 
@@ -95,27 +105,12 @@ Celles-ci restent à améliorer : l'extension a donné un score de 48 en perform
 Le fichier `style.css` à la racine du projet contient toutes les couleurs, définies par des variables, pour utiliser la même teinte pour chaque composant.
 Si des petits composants tels qu'une pagination étaient nécessaire sur plusieurs pages, ces composants seraient créés à part et appelé dans les pages concernées. Ceci pour maintenir une cohérence visuelle, éviter des erreurs et éviter des duplications de code.
 
-## 📈 Data Visualization Philosophy
-
-Choix de charts library et intégration design system
-
 ## 🔮 Next Steps / Complete App Vision
+
 - Branchement de la barre de recherche avec une fonction adaptée (recherche suivant où on se situe)
 - Ajout de tests
   - Test unitaires
   - Tests de non-regression
   - Tests end-to-end
 - Ajout d'une authentification pour avoir un Dashboard personnalisé et avec seulement les données nécessaires à l'utilisateur
-- Ajout d'un thème de couleur sombre 
-- 
-
----
-Framework: Angular
-sytling : Tailwind css
-icons lucide / heroicons
-typography : inter
-Routing : Angular Router
-state management -> angular services + RxJS
-api handling -> angular HttpClient
-build tool -> angular cli (basé sur esbuild / vite-like)
-charts: chart.js
+- Ajout d'un thème de couleur sombre
