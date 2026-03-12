@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Building2, LucideAngularModule, TrendingUp, Users, Wrench } from 'lucide-angular';
 import { DashboardServices } from '../../services/dashboard.services';
 import { CurrencyPipe } from '@angular/common';
@@ -33,8 +33,7 @@ export class Dashboard implements OnInit {
   trendDepartment: any;
   costPerUser: any;
   trendCostPerUser: number = 0;
-  allTools: Tool[] = [];
-  recentTool: Tool[] = []
+  recentTool: Tool[] = [];
 
   ngOnInit(): void {
     this.dashService.getAnalytics().subscribe((analytics) => {
@@ -60,9 +59,6 @@ export class Dashboard implements OnInit {
         this.recentTool = tools;
         this.cdr.detectChanges();
       });
-
-
-
 
     this.dashService.getTotalDepartment().subscribe((departments) => {
       this.departments = departments.length;
