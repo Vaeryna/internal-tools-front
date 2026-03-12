@@ -1,0 +1,12 @@
+body {
+  border: grey;
+}
+
+.thead-recent-tool {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: left;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-grey);
+}

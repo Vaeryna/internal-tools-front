@@ -2,8 +2,36 @@
 
 @import 'tailwindcss';
 
-body{
+body {
   font-family: Inter, serif;
-  background-color: #eaeaea;
+  background-color: #f9fafb;
   margin: 20px
+}
+
+
+:root {
+  --grey: #ebecef;
+  --border: #E5E7EB;
+  --text-grey: #6F7784;
+
+  --green-dark: #009988;
+  --green-light: #00BA7E;
+  --gradient-green: linear-gradient(270deg, var(--green-dark), var(--green-light));
+  --icon-gradient-green: linear-gradient(315deg, var(--green-dark), var(--green-light));
+
+  --tool-dark: #9329FB;
+  --tool-light: #397CFF;
+  --gradient-blue: linear-gradient(270deg, var(--tool-dark), var(--tool-light));
+  --icon-gradient-blue: linear-gradient(315deg, var(--tool-dark), var(--tool-light));
+
+  --department-dark: #E90970;
+  --department-light: #FF6300;
+  --gradient-orange: linear-gradient(270deg, var(--department-dark), var(--department-light));
+  --icon-gradient-orange: linear-gradient(315deg, var(--department-dark), var(--department-light));
+
+  --user-dark: #ED0047;
+  --user-light: #F63197;
+  --gradient-pink: linear-gradient(270deg, var(--user-dark), var(--user-light));
+  --icon-gradient-pink: linear-gradient(315deg, var(--user-dark), var(--user-light));
+
 }
