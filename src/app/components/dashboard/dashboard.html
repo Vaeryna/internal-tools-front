@@ -1,73 +1,118 @@
-<h1><strong>Internal Tools Dashboard</strong></h1>
+<header class="mb-8">
+  <h1 class="text-3xl font-bold tracking-tight"> Internal Tools Dashboard </h1>
+  <p class="mt-2"> Monitor and manage your organization's software tools and expenses</p>
+</header>
 
-<div>
-  <p> Monitor and manage your organization's software tools and expenses</p>
-</div>
+<div id="KPIs-cards" class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
 
+  <!-- Monthly Budget -->
+  <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
 
-<div id="KPIs-cards" class="grid grid-cols-4 justify-items-center">
+    <div class="mb-8 flex items-start justify-between">
+      <p class="text-sm font-medium text-slate-600">Monthly Budget</p>
 
-  <div class="card">
-    <div class="card-header">
-      <p>Monthly Budget</p>
-      <i class="badge [background:var(--icon-gradient-green)] ">
-        <lucide-icon class="icon-badge" [img]="TrendingUp"></lucide-icon>
-      </i>
+      <div
+        class="flex h-10 w-10 items-center justify-center rounded-xl text-white [background:var(--icon-gradient-green)]">
+        <lucide-icon [img]="TrendingUp" class="h-4 w-4"></lucide-icon>
+      </div>
     </div>
-    <div class="card-body">
-      <p> {{ budget?.current_month_total | currency: "EUR" : "symbol":"1.0-0" }}
-        / €{{ budget?.monthly_limit | shortNumber }}</p>
 
-      <p class="[background:var(--gradient-green)] rounded-xl">{{ budget?.trend_percentage }}%</p>
+    <div class="space-y-3">
+      <p class="text-3xl font-bold tracking-tight text-slate-900">
+        {{ budget?.current_month_total | currency:'EUR':'symbol':'1.0-0' }}
+        <span class="text-slate-400">
+          / {{ budget?.monthly_limit | shortNumber }}
+        </span>
+      </p>
+
+      <span
+        class="inline-flex rounded-full px-3 py-1 text-xs font-semibold text-white [background:var(--gradient-green)]">
+        {{ budget?.trend_percentage }}%
+      </span>
     </div>
+
   </div>
 
-  <div class="card">
-    <div class="card-header">
-      <p>Active Tools</p>
-      <i class="badge [background:var(--icon-gradient-blue)]">
-        <lucide-icon class="icon-badge" [img]="Wrench"></lucide-icon>
-      </i>
+
+  <!-- Active Tools -->
+  <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+
+    <div class="mb-8 flex items-start justify-between">
+      <p class="text-sm font-medium text-slate-600">Active Tools</p>
+
+      <div
+        class="flex h-10 w-10 items-center justify-center rounded-xl text-white [background:var(--icon-gradient-blue)]">
+        <lucide-icon [img]="Wrench" class="h-4 w-4"></lucide-icon>
+      </div>
     </div>
 
-    <div class="card-body">
-      <p> {{ activeTools }}</p>
-      <p class="[background:var(--gradient-blue)] rounded-xl"> {{ trendTools }}</p>
+    <div class="space-y-3">
+      <p class="text-3xl font-bold text-slate-900">
+        {{ activeTools }}
+      </p>
+
+      <span
+        class="inline-flex rounded-full px-3 py-1 text-xs font-semibold text-white [background:var(--gradient-blue)]">
+        {{ trendTools }}
+      </span>
     </div>
+
   </div>
 
-  <div class="card">
-    <div class="card-header">
-      <p>Departments</p>
-      <i class="badge [background:var(--icon-gradient-orange)]">
-        <lucide-icon class="icon-badge" [img]="Building2"></lucide-icon>
-      </i>
+
+  <!-- Departments -->
+  <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+
+    <div class="mb-8 flex items-start justify-between">
+      <p class="text-sm font-medium text-slate-600">Departments</p>
+
+      <div
+        class="flex h-10 w-10 items-center justify-center rounded-xl text-white [background:var(--icon-gradient-orange)]">
+        <lucide-icon [img]="Building2" class="h-4 w-4"></lucide-icon>
+      </div>
     </div>
-    <div class="card-body">
-      <p> {{ departments }}</p>
-      <p class="[background:var(--gradient-orange)] rounded-xl">
+
+    <div class="space-y-3">
+      <p class="text-3xl font-bold text-slate-900">
+        {{ departments }}
+      </p>
+
+      <span
+        class="inline-flex rounded-full px-3 py-1 text-xs font-semibold text-white [background:var(--gradient-orange)]">
         {{ trendDepartment }}
-      </p>
+      </span>
     </div>
+
   </div>
 
-  <div class="card">
-    <div class="card-header">
-      <p>Cost/User</p>
-      <i class="badge [background:var(--icon-gradient-pink)]">
-        <lucide-icon class="icon-badge" [img]="Users"></lucide-icon>
-      </i>
 
+  <!-- Cost per User -->
+  <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+
+    <div class="mb-8 flex items-start justify-between">
+      <p class="text-sm font-medium text-slate-600">Cost/User</p>
+
+      <div
+        class="flex h-10 w-10 items-center justify-center rounded-xl text-white [background:var(--icon-gradient-pink)]">
+        <lucide-icon [img]="Users" class="h-4 w-4"></lucide-icon>
+      </div>
     </div>
-    <div class="card-body">
-      <p> {{ costPerUser }}</p>
-      <p class="[background:var(--gradient-pink)] rounded-xl">
-        {{ trendCostPerUser }}
+
+    <div class="space-y-3">
+      <p class="text-3xl font-bold text-slate-900">
+        {{ costPerUser | currency:'EUR':'symbol':'1.0-0' }}
       </p>
+
+      <span
+        class="inline-flex rounded-full px-3 py-1 text-xs font-semibold text-white [background:var(--gradient-pink)]">
+        {{ trendCostPerUser }}
+      </span>
     </div>
+
   </div>
 
 </div>
+
 
 <br>
 <app-recent-tools-tab></app-recent-tools-tab>
