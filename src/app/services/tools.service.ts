@@ -17,8 +17,6 @@ export class ToolsService {
         }
       });
     }
-    console.log("api", `api/tools?${params.toString()}`);
-
     return this.http.get<Tool[]>(`api/tools`, { params });
   }
 }

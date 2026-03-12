@@ -11,7 +11,6 @@ export class DashboardServices {
   getAnalytics(): Observable<any> {
     return this.http.get(`api/analytics`).pipe(
       map((analytics) => {
-        console.log('service', analytics);
         return analytics;
       }),
     );
