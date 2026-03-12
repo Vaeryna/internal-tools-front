@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   Bell,
@@ -19,7 +19,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
-export class Navbar{
+export class Navbar {
   readonly Search = Search;
   readonly DarkMode = Moon;
   readonly NotificationNone = Bell;
