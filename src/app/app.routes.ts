@@ -8,8 +8,9 @@ export const routes: Routes = [
   {
     path: '',
     component: Dashboard,
+    data: { activePath: 'dashboard' },
   },
-  { path: 'tools', component: Tools },
-  { path: 'analytics', component: Analytics },
-  { path: 'settings', component: Settings },
+  { path: 'tools', component: Tools, data: { activePath: 'tools' } },
+  { path: 'analytics', component: Analytics, data: { activePath: 'analytics' } },
+  { path: 'settings', component: Settings, data: { activePath: 'settings' } },
 ];
